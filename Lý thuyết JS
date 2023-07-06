@@ -1,2 +1,712 @@
-Name: Tùng
-Age 2
+Mot so ham built-in
+    1. Alert
+    2. Console: in ra dòng thông báo tab f12
+    3. Confirm: hàm xác nhận
+    4. prompt: hàm xác nhận có thêm 1 cửa sổ để nhập
+    5. setTimeout: chạy 1 đoạn code sau 1 khoảng tgian
+    6. setInterval: chạy liên tục sau 1 khoảng tgian
+    
+
+Toán tử số học
+    + cộng
+    - trừ 
+    * nhân
+    ** lũy thừa
+    / chia
+    % chia lấy số dư
+    ++ tăng 1 giá trị số 
+    -- giảm 1 giá trị số 
+
+
+Toán tử gán 
+    Toán tử          Tương đương
+    x = y            x = y  
+    x += y           x = x + y      
+    x -= y           x = x - y
+    x *= y           x = x * y   
+    x /= y           x = x / y
+    x *= y          x = x * y
+
+
+Toán tử so sánh 
+    == - Bằng
+    != - Không bằng (khác)
+    === - Ss bằng tuyệt đối( so sánh kiểu )
+    !== - Ss  
+
+Toán tử logical
+    && - And
+    || - Or
+    ! - Not       
+Hoặc (||)nếu có ít nhất 1 vế là 'true' thì kết quả là 'true'
+Và (&&)nếu có ít nhất 1 vế là 'false' thi kết quả 'false'
+
+
+Kiểu dữ liệu trong Javascript
+1. Dữ liệu nguyên thủy - Primitive Data
+    - Number: số 
+    - String: chuỗi (bao quanh bằng '' or "")
+    - Boolean: lưu giá trị là 'true' hay 'false'
+    (không có '') có chứ is (var isSuccess = true)
+    - Undefined: khai báo biến nhưng không gán giá trị
+    - Null: kiểu dữ liệu không có gì 
+    - Symbol: 
+2. Dữ liệu phức tạp - Complex Data
+    - Function
+    - Object - myObject = {}
+             - myArray = []
+
+Cách kiểm tra console.log(typeof biến)
+Typeof của 1 số trả về 'number'
+Typeof của 1 chuỗi trả về 'string'
+var a = 1
+var b = a typeof b = number
+var c = b typeof c = string   
+    
+
+Hàm (Function)
+    - Một khối mã
+    - Làm 1 việc cụ thể
+    - Loại hàm - Built in
+               - Tự định nghĩa 
+    - Tính chất - Không thực thi khi định nghĩa
+                - Sẽ thực thi khi được gọi 
+                - Có thể nhận tham số
+                - Có thể trả về 1 giá trị
+
+argument: - chỉ xuất hiện trong 1 function, 
+            gọi bên ngoài sẽ lỗi
+          - function test() {
+            console.log(argument);
+          }
+
+          test('a', 'b', 'c',...)
+
+Vòng lặp for of:
+        function test() {
+            for(var param of argument) {
+                console.log(param)
+            }
+        }
+        test('log1', 'log2', 'log3')
+
+Từ khóa return
+        function nhan(a, b) {
+            return a * b
+        }
+
+        var tong = nhan(2, 4);
+        
+        console.log(tong)
+
+Khi function đặt trùng tên gọi chỉ chạy function cuối 
+Khai báo biến trong hàm phạm vi sử dụng chỉ ở trong hàm
+Định nghĩa hàm trong hàm 
+    function test() {
+        funtion test2() {
+            console.log('message');
+        }
+        test2();
+    }
+    test();
+
+
+Các loại hàm: function
+1. Declaration function(có thể gọi trc khi được định nghĩa)
+    funtion test() {
+
+    }
+
+2. Expression function(không thể gọi trc khi định nghĩa)
+    var test2 = function() {
+
+    }
+
+    setTimeout(funtion() {
+
+    });
+
+    var myObject = {
+        myFunction: function() {
+            
+        }
+    }
+
+Cách xem độ dài chuỗi var test = ' ';
+                      console.log(test.length)
+
+Template string: 
+var firstName = 'Tung';
+var lastName = 'Nguyen';
+
+console.log(Toi la: ${firstName} ${lastName})
+
+
+Làm việc với chuỗi: 
+        var myString = 'Lam viec voi chuoi'
+
+1. Length: Kiểm tra độ dài của chuôi
+    console.log(myString.length);
+2. Find index: Tìm vị trí của 1 ký tự nằm trong 1 chuôi 
+    console.log(myString.indexOf('voi')) tìm ký tự đầu tiên 
+    console.log(myString.indexOf('voi', 12)) nhập số sau ký tự cần tìm
+    console.log(myString.lastIndexOf('voi')) tìm ký tự cuối cùng
+3. Cut string: cắt chuỗi
+    console.log(myString.slice(số bắt đầu cắt, số kết thúc))
+    cắt bên trái đếm từ trái 0->dương, cái bên phải đếm từ phải âm<-0 
+4. Replace: ghi đè
+    console.log(myString.replace('viec', 'test'))
+    console.log(myString.replace(/viec/g, 'test')) 
+                        ghi đè tất cả phải dùng biểu thức chính quy
+5. Convert to upper case: chuyển đổi tất cả chuỗi thành chữ hoa 
+    console.log(myString.toUpperCase())
+6. Convert to lower case: chuyển đổi tất cả chuỗi thành chữ thường
+    console.log(myString.toLowerCase())
+7. Trim: loại bỏ khoảng trắng thừa
+    console.log(myString.trim())
+8. Split: cắt 1 chuỗi thành 1 array, 
+    console.log(myString.split('điểm chung để tách'))
+9. Get a character by index: lấy ký tự bởi 1 index cho trc
+    console.log(myString.charAt())
+    console.log(myString[])0
+
+CÁCH KIỂM TRA BIẾN DÙNG'IS'
+    var test = 20 / 'ABC';
+    console.log(isNaN(test));
+
+
+Làm việc với Number
+    Đổi number sang string - console.log(test.toString())
+    Làm tròn số 
+        var test = 123.764
+        console.log(test.toFixed(muốn làm tròn đến giá trị bn sau phẩy))
+    
+
+Mảng (Array)
+    var test = [
+        123;
+        'JS';
+        {}
+    ];
+    Cách kiểm tra mảng: console.log(Array.isArray(...))
+    Lấy phần tử theo index: console.log(test[...])
+
+Làm việc với mảng(Array)
+    var languages = [
+        'JS',
+        'PHP',
+        'Ruby',
+    ]
+
+1. To string: chuyển array thành string(cách nhau bằng dấu phẩy)
+    console.log(languages.toString());
+2. Join: chuyển array thành string (có thể sửa dấu phẩy ngăn cách);
+    console.log(languages.join('thêm dấu muốn ngăn cách'))
+3. Pop: xóa phần tử ở cuối mảng và trả về phần tử đã xóa 
+    console.log(languages.pop());
+4. Shift: xóa phần tử ở đầu mảng và trả về phần tử đã xóa
+    console.log(languages.shift());
+5. Push:thêm phần tử vào cuối mảng, trả về độ dài mới của mảng
+    console.log(languages.push('...', '...'))
+6. Unshift:thêm phần tử vào đầu mảng, trả về độ dài mới của mảng
+    console.log(languages.unshift('...', '...'))
+7. Splicing:xóa, cắt, chèn phần tử mới vào mảng
+    languages.splice(a, b , 'c', 'c')
+    a: vị trí đặt con trỏ 
+    b: số lượng element muốn xóa 
+    c: những element muốn truyền vào 
+8. Concat: nối array
+    var languages2 = [
+        'Java',
+    ]
+        console.log(languages.concat(languages2))
+
+9. Slicing:cắt element của mảng
+    console.log(languages.slice(a, b))
+    a: số bắt đầu 
+    b: số kết thúc
+    cắt từ trên xuống đếm từ 0->dương, dưới lên âm->0
+
+Làm việc với mảng (array) có hàm:
+    var khoaHocs = [
+        {
+            id: 1,
+            name: 'Javascript',
+            coin: 10
+        },
+        {
+            id: 2,
+            name: 'HTML, CSS',
+            coin: 0
+        },
+        {
+            id: 3,
+            name: 'PHP',
+            coin: 0
+        },
+        {
+            id: 4,
+            name: 'ReactJs',
+            coin: 20
+        },
+    ];
+
+1. forEach(): duyệt qua từng phần tử của mảng thay vì vòng lặp
+    khoaHocs.forEach(function(khoaHoc, index) { 
+        console.log(index, khoaHoc)
+    });
+    // tham số 1 (khoaHoc): trả về từng phần tử mảng
+    // tham số 2 (index): số giá trị của mảng  
+2. every(): kiểm tra tất cả các phần tử của mảng thỏa mãn 1 điều kiện
+    var mienPhi = khoaHocs.every(function(khoaHoc) { 
+        return khoaHoc.coin === 0;
+    });
+        console.log(mienPhi);
+    // chỉ 1 khóa học mất phí là trả về false
+    // chỉ 1 phần tử sai là dừng ktra trả về false luôn
+3. some(): kiểm tra đến khi gặp điều kiện đúng thì dừng
+    khoaHocs.some(function(khoaHoc) { 
+        return khoaHoc.coin === 10;
+    });
+
+    console.log(khoaHoc);
+    // có 1 phần tử là 10: true
+    // không có 10: false
+4. find(): tìm kiếm tìm được 1 phần tử đúng là kết thúc 
+    var test = khoaHocs.find(function(khoaHoc) { 
+        return khoaHoc.name === 'PHP';
+    });
+        console.log(test);
+    // phải gọi biến 
+5. filter(): tìm kiếm được tất cả phần tử đúng 
+   var test = khoaHocs.filter(function(khoaHoc) { 
+        return khoaHoc.name === 'PHP';
+    });
+        console.log(test);
+    // phải gọi biến 
+6. map(): chỉnh sửa, thay đôi element của 1 array
+    function test(a) {
+    return {
+        id: a.id,
+        name: Khoa hoc: ${a.name},
+        coin: a.coin,
+        coinText: Gia: ${a.coin}
+    }; // return về cái gì thì ta sẽ nhận về giá trị đó 
+}
+
+    var newKhoaHoc = khoaHocs.map(test);
+
+    console.log(newKhoaHoc);
+        ;/ số lượng phần tử của newKhoaHoc = số lượng phần tử của khoaHoc
+        ;/ trong () map phải truyền vào 1 function (có thể ra ngoài)
+7. reduce(): nhận về giá trị sau khi làm việc hoặc tính toán trên array
+    ;/ cách viết đầy đủ
+    var i = 0;
+function allCoin (accumulator, currentValue) {
+
+    var total = accumulator + currentValue.coin;
+    console.table({ ;/ in ra bảng 
+        'Lượt chạy': i,
+        'Biến tích trữ': accumulator, ;biến lưu trữ 
+        'Giá khóa học': currentValue.coin, ; giá trị hiện tại (các phần từ array)
+        'Tích trữ được': total
+    })
+    return total;
+}
+    var totalCoin = khoaHocs.reduce (allCoin, 0);/ 0 là giá trị khởi tạo 
+
+    console.log(totalCoin);
+    
+    ; cách viết ngắn gọn
+    var totalCoin = khoaHocs.reduce (function total (a, c) {
+        return a + c.coin;
+    }, 0);
+
+    console.log(totalCoin);
+
+Includes method: tìm 1 phần tử trong Array hoặc String
+    var title = 'Responsive web design';
+    console.log(title.includes('web', ;vị trí muốn bắt đầu tìm))
+
+
+    var courses = ['js', 'PHP', 'Dart'];
+    console.log(courses.includes('PHP', -1))  ;/ 3 + -1 (tìm từ 2)
+
+    
+Tự xây dựng phương thức:
+    
+    //MAP:
+    var courses = [
+        'javascript',
+        'PHP',
+        'Ruby'
+    ];
+
+    Array.prototype.map2 = function(callback) {
+        var output = [];
+        var arrayLength = this.length;
+        for (var i = 0; i < arrayLength; i++) {
+            var arr = callback(this[i], i);
+            arr.push(output);
+        }
+        return arr;
+    }
+    courses.map2(function(courses) {
+        return ...
+    });
+
+    //FOREACH:
+    Array.prototype.forEach2 = function(callback) {
+        for (var index in this) {
+            if (this.hasOwnProperty(index)) { 
+                callback(this[index], index, this); 
+            }
+        }
+    };
+
+    courses.forEach2(function (course, index, array) {
+        console.log(course, index, array)
+    });
+
+    //FILTER:
+    const numbers = [1, 2, 3, 4];
+
+    console.log(numbers.myFilter(function (number) {
+        return number % 2 === 0;
+    })); //Output: [2, 4]
+
+    console.log(numbers.myFilter(function (number, index) {
+        return index % 2 === 0;
+    })); //Output: [1, 3]
+
+    console.log(numbers.myFilter(function (number, index, array) {
+        return array.length % 2 === 0;
+    })); //Output: [1, 2, 3, 4]
+    
+    Array.prototype.myFilter = function(cb) {
+    var output = [];
+    for ( var index in this ) {
+        if (this.hasOwnProperty(index)) {
+            var arr = cb(this[index], index, this)
+            if (arr) {
+                output.push(this[index])
+            }
+        }
+    }
+    return output;
+    }
+
+//SOME:
+    const numbers = [1, 3, 3, 5];
+
+    console.log(numbers.mySome(function (number) {
+        return number % 2 === 0;
+    })); //Output: false
+
+    console.log(numbers.mySome(function (number, index) {
+        return index % 2 === 0;
+    })); //Output: true
+
+    console.log(numbers.mySome(function (number, index, array) {
+        return array.length % 2 === 0;
+    })); //Output: true
+    
+    C1: 
+    Array.prototype.mySome = function (callback) {
+        for ( var index in this ) {
+            if (this.hasOwnProperty(index)) {
+                if (callback(this[index], index, this)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    C2: đặt biến 
+    Array.prototype.mySome = function (callback) {
+        var output = false;
+        for ( var index in this ) {
+            if (this.hasOwnProperty(index)) {
+                if (callback(this[index], index, this)) {
+                    output = true;
+                    break;
+                }
+            }
+        }
+        return output;
+    }
+
+    //EVERY:
+    Array.prototype.myEvery = function(cb) {
+        var output = true;
+        for (var index in this) {
+            if (this.hasOwnProperty(index)) {
+                var arr = cb(this[index], index, this)
+                if (!arr) {
+                    return output = false;
+                    break;
+                }
+            }
+        }
+        return output;
+    }
+    
+    
+    
+    const numbers = [1, 3, 3, 5];
+    
+    console.log(numbers.myEvery(function (number) {
+        return number % 2 !== 0;
+    })); // Output: true
+    
+    console.log(numbers.myEvery(function (number, index) {
+        return index % 2 === 0;
+    })); // Output: false
+    
+    console.log(numbers.myEvery(function (number, index, array) {
+        return array.length % 2 === 0;
+    })); // Output: true
+
+
+    Object trong JS:
+    var myInfo = {
+        (key): 'value',
+        name: 'Trong Tung',
+        age: 18,
+        address: 'Ha Noi',
+        'full-name': (key có ký tự đặc biệt)
+    }
+    Thêm 1 cặp key hoặc value: myInfo.email = '...';
+    (thêm key có ký tự đặc biệt): myInfo['my-email'] = '...',
+    Lấy value ra ngoài: console.log(myInfo.name);
+                        console.log(myInfo['name']);
+    Thêm 1 key vào trong object bằng 1 biến:
+        var emailKey = 'email';
+        var myInfo = {
+            [emailKey]: '...';
+        } 
+    Xóa key trong Object: delete myInfo.(key)  
+    Function trong Object:
+        var myInfo = {
+            name: function() {
+                return this.name;
+            }
+        } 
+        console.log(myInfo.name());
+            'this': là tên biến myInfo  
+
+        Function --> Phương thức (method)
+        TH còn lại --> Thuộc Tính (property)  
+
+
+Đối tượng date:
+    var test = new Date();
+
+    var year = test.getFullYear(2);
+    var month = test.getMonth() + 1;
+    var day = test.getDate()
+
+    console.log(${day}/${month}/${year});
+
+
+Math Object:
+    - Math.PI: Lấy số PI
+    - Math.round(): Làm tròn số
+    - Math.abs(): Trả về giá trị tuyệt đối, biến số - thành +
+    - Math.ceil(): Làm tròn trên
+    - Math.floor(): làm tròn dưới
+    - Math.random(): Trả về số thập phân ngẫu nhiên <1
+        var test = Math.floor(Math.random() * 10);
+        console.log(test); (lấy số ngẫu nhiên 0->10)
+
+        var random = Math.floor(Math.random() * 6);
+        var luckybox = [
+            '0 coin',
+            '10 coin',
+            '20 coin',
+            '30 coin',
+            '50 coin',
+            '100 coin',
+        ]
+        console.log(luckybox[random]);(random trong tỉ lệ đều)
+
+        var random = Math.floor(Math.random() * 6);
+        if (random < 5) {
+            console.log('Thanh cong')
+        };(giới hạn tỉ lệ)
+
+    - Math.min():Lấy ra giá trị nhỏ nhất
+    - Math.max():Lấy ra giá trị lớn nhất
+
+
+Câu lệnh rẽ nhánh - switch(value) {
+    case CASE:
+        
+    break// Kết thúc 1 case
+}
+    var test = 2;
+    switch(test) {
+        case 1:
+        case 2:
+            console.log('la` 1, 2,');
+            break;
+        case 3:
+            console.log('la` 3');
+            break;
+        default:
+            console.log('het roi`');
+    }
+
+
+Câu lệnh If esle: - so sánh tính đúng sai(< , > , !==)
+                  - số lương case ít hơn 3
+
+
+Câu lệnh switch case - Biết trước giá trị case
+                     - Số case >= 3
+        
+
+
+Vòng lặp - Loop
+
+1. for - Lặp với điều kiện đúng
+    for (var i = 1; 1<=1000; i++) {
+        console.log(i)
+    }; // chạy biểu thức 1->2->in->chạy 2->3
+2. for/in - Lặp qua key của đối tượng
+    var fullName = [
+    'nguyen', 'trong', 'tung'
+]
+
+for (var test in fullName) {
+    console.log(fullName[test])
+}
+3. for/of - Lặp qua value của đối tượng 
+    Lấy ra phần tử của 1 mảng
+    Lấy ra từng chữ cái của 1 chuỗi 
+    Sử dụng với object phải biến đổi
+        var myInfo = {
+            name: 'Tung',
+            age: 25
+        }; 
+        
+        for (var test of Object.key(myInfo)) {
+            console.log(test);
+        }
+4. while - Lặp khi điều kiện đúng
+    var i = 0;
+    while (i < 10 'Điều kiện') {
+    i++;    'Cộng thêm 1 vào i trc khi in'
+    console.log(i);
+    i++;    'Cộng thêm 1 vào i sau khi in'
+}
+5. do/while - Lặp ít nhất 1 lần, sau đó lặp khi điều kiện đúng
+    var i = 0;
+    do {
+        i++;
+        console.log(i)
+    } while (i < 10 'Điều kiện')
+    // Chạy 1 lần, từ lần thứ 2 mới kiểm tra điều kiện.
+
+break & continue trong vòng lặp
+    
+    break - thoát khỏi vòng lặp.
+    
+    for (var i = 0; i < 10; i++) {
+        console.log(i);
+        if (i > 5) {
+            break;
+        }
+    }
+    // Vòng lặp thoát tính từ khi break được thực thi 
+
+    continue - bỏ qua 1 vài lần lặp của vòng lặp
+    for (var i = 0; i < 10; i++) {
+        if (i%2 == 0 ) { // i chia 2 số dư = 0 thì bỏ qua
+            continue;
+        }
+        console.log(i);  // lấy số lẻ 
+    }
+
+
+Vòng lặp lồng nhau 
+    var array = [
+    [1,2], [3,4], [5,6] 
+    ];
+
+    for (x=0; x < array.length; x++) {
+        for (y=0; y < array[x].length; y++){
+            console.log(array[x][y]);
+        };
+   };
+
+
+Đối tượng Set - không lặp lại đối tượng
+    var array = ['a', 'b', 'c', 'a', 'b', 'c'] {
+        console.log([...(new.Set(array))])
+    }
+    // ... - là toán tử giải 
+    // [] - chuyển thành mảng 
+    
+
+Đệ quy - Hàm gọi lại chính nó.
+
+
+Callback - Là hàm 
+         - Được truyền qua đối số, khi gọi hàm khác
+    
+    function myFunction (param) {
+    if (typeof param === 'function') {
+       param('Học lập trình');
+      }
+    }
+
+    function myCallback (value) {
+      console.log('value:',value );
+    }
+
+    myFunction(myCallback);
+
+
+    //HTML DOM: Document Object Model
+    <body>
+    <h1 id="heading">HTML DOM</h1>
+    <h1 class="heading">HTML DOM</h1>
+    <h1 class="heading">HTML DOM</h1>
+    
+    <p> hello guys!</p>
+    <div class="box">
+        <h2 class="heading-2">heading 2</h2>
+        <h2 class="heading-2">heading 2</h2>
+        <h2 class="heading-2">heading 2</h2>
+        <h2 class="heading-2">heading 2</h2>
+    </div>
+    </body>
+    
+    - Element: là 1 thẻ tag //<h1></h1>
+
+    1. ID: chỉ lấy ra được 1 element - 1 web chỉ có 1 id
+        document.getElementById('heading')
+    
+    2. class: trả về HTMLCollection chứa tất cả element
+        document.getElementsByClassName('heading')
+    
+    3. tag: tìm qua tên của thẻ
+        document.getElementsByTagName('h1')
+        document.getElementsByTagName('p')
+    
+    4. CSS selector: 
+        document.querySelector('.heading')
+
+        Lấy thẻ bên trong thẻ:
+        C1: document.querySelector('.heading-2')
+        C2: document.querySelector('.box .heading-2')
+
+        Lấy thẻ thứ 1: document.querySelector('.box .heading-2:first-child')
+        Lấy thẻ thứ 2-->:document.querySelector('.box .heading-2:nth-child(3)')
+
+        Lấy tất cả phần tử: document.querySelectorAll('.heading')
+    5. HTML collection: thẻ <a>, thẻ <form>          
+    - Attribute: thuộc tính nằm trong thẻ //class=""
+    - Text:đoạn chữ, phần tử nằm trong thẻ // HTML DOM
